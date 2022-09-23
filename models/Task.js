@@ -3,7 +3,7 @@ const {DataTypes} = require('sequelize')
 
 const Task = sequelize.define('task', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    title: {type: DataTypes.STRING},
+    title: {type: DataTypes.TEXT},
     text: {type: DataTypes.STRING}
 })
 

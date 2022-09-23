@@ -4,10 +4,9 @@ const router = new Router()
 const TaskController = require('../controllers/taskController')
 const authMiddleware = require('../middleware/authMiddleware')
 
-router.post('/', TaskController.create)
-router.get('/', TaskController.getAll)
-
-//router.put('/task')
-//router.delete('/task')
+router.post('/', authMiddleware, TaskController.create)
+router.get('/:userId', authMiddleware, TaskController.getAll)
+router.put('/', authMiddleware, TaskController.updateOne)
+router.delete('/', authMiddleware, TaskController.deleteOne)
 
 module.exports = router
